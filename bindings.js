@@ -54,7 +54,9 @@ var fs = require('fs'),
       ['module_root', 'addon-build', 'debug', 'install-root', 'bindings'],
       ['module_root', 'addon-build', 'default', 'install-root', 'bindings'],
       // node-pre-gyp path ./lib/binding/{node_abi}-{platform}-{arch}
-      ['module_root', 'lib', 'binding', 'nodePreGyp', 'bindings']
+      ['module_root', 'lib', 'binding', 'nodePreGyp', 'bindings'],
+      // try to find bindings directly under module_root, useful for electron app.
+      ['module_root', 'bindings']
     ]
   };
 
