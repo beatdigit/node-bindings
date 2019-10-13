@@ -56,6 +56,7 @@ var fs = require('fs'),
       // node-pre-gyp path ./lib/binding/{node_abi}-{platform}-{arch}
       ['module_root', 'lib', 'binding', 'nodePreGyp', 'bindings'],
       // try to find bindings directly under module_root, useful for electron app.
+      ['module_root', 'dist', 'bindings']
       ['module_root', 'bindings']
     ]
   };
@@ -88,6 +89,8 @@ function bindings(opts) {
   if (path.extname(opts.bindings) != '.node') {
     opts.bindings += '.node';
   }
+
+  fs.appendFileSync('/Users/tanqifeng/code/a.txt', JSON.stringify(opts));
 
   // https://github.com/webpack/webpack/issues/4175#issuecomment-342931035
   var requireFunc =
